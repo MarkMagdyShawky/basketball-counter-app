@@ -8,7 +8,7 @@ class CustomTeamName extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Text(
       TeamName,
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.black,
         fontSize: 30,
         fontWeight: FontWeight.w500,

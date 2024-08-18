@@ -11,11 +11,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int teamA = 0;
+  int teamB = 0;
   @override
   Widget build(BuildContext context) {
     double pageWidth = MediaQuery.sizeOf(context).width;
-    int teamA = 0;
-    int teamB = 0;
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kPrimaryColor,
@@ -29,7 +31,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Container(
-          padding: EdgeInsets.only(top: 60),
+          padding: const EdgeInsets.only(top: 60),
           child: Column(
             children: <Widget>[
               Row(
@@ -40,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                     width: (pageWidth / 2) - 20,
                     child: Column(
                       children: [
-                        CustomTeamName(
+                        const CustomTeamName(
                           TeamName: 'Team A',
                         ),
                         Text(
@@ -51,11 +53,26 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w300,
                           ),
                         ),
-                        CustomButton(btnName: "Add 1 Point", onPressed: () {}),
-                        SizedBox(height: 35),
-                        CustomButton(btnName: "Add 2 Point", onPressed: () {}),
-                        SizedBox(height: 35),
-                        CustomButton(btnName: "Add 3 Point", onPressed: () {}),
+                        CustomButton(
+                            btnName: "Add 1 Point",
+                            onPressed: () {
+                              setState(() {
+                                teamA++;
+                              });
+                            }),
+                        const SizedBox(height: 35),
+                        CustomButton(btnName: "Add 2 Point", onPressed: () {
+                          setState(() {
+                            teamA +=2;
+                          });
+                        }),
+                        const SizedBox(height: 35),
+                        CustomButton(btnName: "Add 3 Point", onPressed: () {
+                          setState(() {
+                            teamA +=3;
+                            print(teamA);
+                          });
+                        }),
                       ],
                     ),
                   ),
@@ -68,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                     width: (pageWidth / 2) - 20,
                     child: Column(
                       children: [
-                        CustomTeamName(
+                        const CustomTeamName(
                           TeamName: 'Team B',
                         ),
                         Text(
@@ -79,19 +96,38 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.w300,
                           ),
                         ),
-                        CustomButton(btnName: "Add 1 Point", onPressed: () {}),
-                        SizedBox(height: 35),
-                        CustomButton(btnName: "Add 2 Point", onPressed: () {}),
-                        SizedBox(height: 35),
-                        CustomButton(btnName: "Add 3 Point", onPressed: () {}),
+                        CustomButton(
+                            btnName: "Add 1 Point",
+                            onPressed: () {
+                              setState(() {
+                                teamB++;
+                              });
+                            }),
+                        const SizedBox(height: 35),
+                        CustomButton(btnName: "Add 2 Point", onPressed: () {
+                          setState(() {
+                            teamB +=2;
+                          });
+                        }),
+                        const SizedBox(height: 35),
+                        CustomButton(btnName: "Add 3 Point", onPressed: () {
+                          setState(() {
+                            teamB +=3;
+                          });
+                        }),
                       ],
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 60),
+              const SizedBox(height: 60),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    teamB = 0;
+                    teamA = 0;
+                  });
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: kPrimaryColor,
                   minimumSize: const Size(150, 50),
