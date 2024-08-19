@@ -1,7 +1,7 @@
 <h1 align="center">Basketball Counter App</h1>
 
 --------------------------------------------------------------------------------
-![Basketball Counter App](./assets/basketball_counter.png)
+![Basketball Counter App](./assets/basketball_counter.jpg)
 
 ## Features
 - NFT Marketplace include many collection and categories. 
