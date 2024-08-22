@@ -12,6 +12,8 @@
 ## Dependencies
 - Flutter
 - Dart
+- Bloc
+- Cubit
 
 
 ## Contributors
